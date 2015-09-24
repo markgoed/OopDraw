@@ -5,8 +5,8 @@ import java.awt.Point;
  * Written By: Mark Goedegebure
  */
 
-// Class cRect for drawing Rects is derived
-// from our 'base class' cShape
+// Class cRect for drawing Rects refactored
+// from our 'base class' rShape
 
 class RectComposer implements ShapeComposer {
 

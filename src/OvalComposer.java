@@ -9,13 +9,9 @@ import java.awt.Point;
 class OvalComposer implements ShapeComposer {
 
 	protected Point ptStart; // Start point of shape
-
 	protected Point ptEnd; // End point of shape
-
 	protected int nwidth; // Width of shape
-
 	protected int nheight; // Height of shape
-
 	protected Color clrFront; // Default color
 
 	// Drawing routine

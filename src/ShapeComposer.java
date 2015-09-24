@@ -15,8 +15,3 @@ public interface ShapeComposer
 	public void Draw(Graphics2D g);
 
 }
-/**
- * public abstract void setEnd(Point pt); public Point getStart() { return
- * ptStart; } public Point getEnd() { return ptEnd; } public abstract void
- * Draw(Graphics2D g); } // Base class cShape ends
- */
