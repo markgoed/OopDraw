@@ -19,41 +19,7 @@ class RectComposer implements ShapeComposer {
 	protected int nheight; // Height of shape
 
 	protected Color clrFront; // Default color
-
-	public void setEnd(Point pt) {
-		ptEnd = pt;
-	}
-
-	public void setWidth(int w) {
-		nwidth = w;
-	}
-
-	public void setHeight(int h) {
-		nheight = h;
-	}
-
-	public Point getStart() {
-		return ptStart;
-	}
-
-	public Point getEnd() {
-		return new Point(0, 0);
-	}
-
-	public int getWidth() {
-		return nwidth;
-	}
-
-	public int getHeight() {
-		return nheight;
-	}
-
-	// Drawing routine
-	public void Draw(Graphics2D g) {
-		g.setColor(Color.blue.brighter()); // Set default color
-		g.drawRect(ptStart.x, ptStart.y, nwidth, nheight);
-	}
-
+	
 	@Override
 	public void create(int x, int y) {
 		ptStart = new Point(x, y);

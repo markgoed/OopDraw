@@ -14,12 +14,6 @@ class OvalComposer implements ShapeComposer {
 	protected int nheight; // Height of shape
 	protected Color clrFront; // Default color
 
-	// Drawing routine
-	public void Draw(Graphics2D g) {
-		g.setColor(Color.green.darker()); // Set default color
-		g.drawOval(ptStart.x, ptStart.y, nwidth, nheight);
-	}
-
 	@Override
 	public void create(int x, int y) {
 		ptStart = new Point(x, y);

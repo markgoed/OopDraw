@@ -163,7 +163,7 @@ public class OOPDraw2 extends JFrame implements MouseListener, MouseMotionListen
 		for (int i = 0; i < shapelist.size(); i++) {
 			// Add the shapes to the vector
 			ShapeComposer sc = shapelist.get(i);
-			sc.Draw((Graphics2D) g);
+			sc.getShape((Graphics2D) g);
 		}
 	}
 
