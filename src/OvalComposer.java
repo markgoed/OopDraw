@@ -1,41 +1,33 @@
-import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.Point;
 
-/**
- * Written By: Mark Goedegebure
- * Class MyOval for drawing ovals is derived from our 'base class' AbstratShape
- */
-class OvalComposer implements ShapeComposer {
 
-	protected Point ptStart; // Start point of shape
-	protected Point ptEnd; // End point of shape
-	protected int nwidth; // Width of shape
-	protected int nheight; // Height of shape
-	protected Color clrFront; // Default color
+public class OvalComposer implements ShapeComposer {
 
+	private MyOval oval;
+	
+	public AbstractShape getShape()
+	{
+		return oval;
+	}
+	
 	@Override
 	public void create(int x, int y) {
-		ptStart = new Point(x, y);
-
+		oval = new MyOval();
+		Point start = new Point(x, y);
+		oval.setStart(start);
 	}
 
 	@Override
 	public void expand(int x, int y) {
-		Point drawto = new Point(Math.max(x, ptStart.x), Math.max(y, ptStart.y));
-		ptStart = new Point(Math.min(x, ptStart.x), Math.min(y, ptStart.y));
-		nwidth = Math.abs((drawto.x - ptStart.x));
-		nheight = Math.abs((drawto.y - ptStart.y));
+		Point drawto = new Point(Math.max(x, oval.getStart().x), Math.max(y, oval.getStart().y));
+		Point newstart = new Point(Math.min(x, oval.getStart().x), Math.min(y, oval.getStart().y));
+		oval.setWidth(Math.abs((drawto.x - newstart.x)));
+		oval.setHeight(Math.abs((drawto.y - newstart.y)));
+		oval.setEnd(newstart);
 	}
 
 	@Override
 	public void complete(int x, int y) {
-		Point drawto = new Point(Math.max(x, ptStart.x), Math.max(y, ptStart.y));
-		ptStart = new Point(Math.min(x, ptStart.x), Math.min(y, ptStart.y));
-		nwidth = Math.abs((drawto.x - ptStart.x));
-		nheight = Math.abs((drawto.y - ptStart.y));
+		expand(x, y);
 	}
-
 }
-
-// Class cOval ends
